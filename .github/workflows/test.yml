@@ -5,6 +5,11 @@ on:
     branches:
       - develop
 
+permissions:
+  actions: write
+  checks: write
+  contents: write
+  
 jobs:
   test-lint-prettify:
     runs-on: ubuntu-latest
