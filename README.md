@@ -72,3 +72,10 @@ yarn add -D eslint prettier
 yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 yarn add -D eslint-config-prettier eslint-plugin-prettier
 ```
+
+次に、ESLintの設定ファイルを作成します。  
+以下のコマンドを実行します。  
+
+```shell
+npx eslint --init
+```
