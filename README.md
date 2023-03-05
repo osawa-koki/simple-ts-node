@@ -101,3 +101,19 @@ module.exports = {
   "singleQuote": true
 }
 ```
+
+### ビルドスクリプトの作成
+
+`package.json`にビルドスクリプトを追加します。  
+
+```json
+{
+  "scripts": {
+    "dev": "ts-node-dev ./src/index.ts",
+    "start": "nodemon --exec ts-node ./src/index.ts",
+    "lint": "eslint --ext .ts ./src --fix --max-warnings 0",
+    "prettify": "prettier --write ./src/**/*.ts",
+    "test": "jest"
+  }
+}
+```
