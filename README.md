@@ -21,7 +21,7 @@ yarn init -y
 ### TypeScriptのインストール
 
 ```shell
-yarn add -D typescript ts-node ts-node-dev nodemon @types/node 
+yarn add -D typescript ts-node ts-node-dev nodemon @types/node
 ```
 
 ### TypeScriptの設定
