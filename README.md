@@ -62,3 +62,13 @@ yarn add -D eslint-config-prettier eslint-plugin-prettier
 ```shell
 npx eslint --init
 ```
+
+次に、Prettierの設定ファイルを作成します。  
+`.prettierrc`というファイルを作成し、以下の内容を記述します。  
+
+```.prettierrc
+{
+  "singleQuote": true,
+  "semi": false
+}
+```
