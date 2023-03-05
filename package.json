@@ -5,7 +5,7 @@
   "author": "osawa-koki <github@osawa.dev>",
   "license": "Apache-2.0",
   "scripts": {
-    "lint": "eslint --ext .ts ./src --fix",
+    "lint": "eslint --ext .ts ./src --fix --max-warnings 0",
     "prettify": "prettier --write ./src/**/*.ts",
     "test": "jest"
   },
