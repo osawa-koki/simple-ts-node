@@ -27,23 +27,10 @@ yarn add -D typescript ts-node ts-node-dev nodemon @types/node
 ### TypeScriptの設定
 
 `tsconfig.json`を作成します。  
-以下の設定を追加します。  
+以下のコマンドを実行します。  
 
 ```json
-{
-  "compilerOptions": {
-    "target": "ES2018",
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "outDir": "dist",
-    "strict": true,
-    "moduleResolution": "node"
-  },
-  "include": [
-    "src/**/*"
-  ]
-}
+npx tsc --init
 ```
 
 ### Jestのインストール
