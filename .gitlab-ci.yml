@@ -1,0 +1,43 @@
+image: node:18
+
+stages:
+  - test-lint-prettify
+
+variables:
+  GIT_DEPTH: 1
+
+test-lint-prettify:
+  stage: test-lint-prettify
+  script:
+    - apt-get update && apt-get install -y git
+    - git clone --depth $GIT_DEPTH --branch $CI_COMMIT_BRANCH $CI_REPOSITORY_URL .
+    - yarn install
+    - yarn test
+    - yarn lint
+    - yarn prettify --check
+    - |
+      CHANGES=$(git status --porcelain)
+      if [ -n "$CHANGES" ]; then
+        git config --global user.email "${CI_PROJECT_NAME}@gitlab.com"
+        git config --global user.name "BOT.${GITLAB_USER_NAME}"
+        git add -A
+        git commit -m "Prettify code with yarn prettify"
+        git push "https://oauth2:${CI_JOB_TOKEN}@${CI_REPOSITORY_URL#"https://"}" "${CI_COMMIT_BRANCH}"
+      fi
+    - yarn upgrade
+    - |
+      CHANGES=$(git status --porcelain)
+      if [ -n "$CHANGES" ]; then
+        git config --global user.email "${CI_PROJECT_NAME}@gitlab.com"
+        git config --global user.name "BOT.${GITLAB_USER_NAME}"
+        git add -A
+        git commit -m "Upgrade packages with yarn upgrade"
+        git push "https://oauth2:${CI_JOB_TOKEN}@${CI_REPOSITORY_URL#"https://"}" "${CI_COMMIT_BRANCH}"
+      fi
+    - yarn outdated
+    - yarn audit
+    - yarn test
+  only:
+    - develop
+  except:
+    - schedules
