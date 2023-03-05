@@ -3,18 +3,12 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    'standard-with-typescript',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
-    'prettier/standard',
-  ],
+  extends: ['standard-with-typescript', 'plugin:prettier/recommended', 'prettier'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['prettier'],
   rules: {
-    'prettier/prettier': 'error'
+    // additional rules
   }
 };
