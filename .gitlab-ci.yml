@@ -10,6 +10,7 @@ test-lint-prettify:
   stage: test-lint-prettify
   script:
     - apt-get update && apt-get install -y git
+    - rm -rf ./*
     - git clone --depth $GIT_DEPTH --branch $CI_COMMIT_BRANCH $CI_REPOSITORY_URL .
     - yarn install
     - yarn test
