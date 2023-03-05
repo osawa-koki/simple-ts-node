@@ -1,6 +1,6 @@
 # simple-ts-node
 
-TypeScriptを使ってNode.jsのプロジェクトを作るためのテンプレートです。  
+🐱🐱🐱 TypeScriptを使ってNode.jsのプロジェクトを作るためのテンプレートです。  
 よく使用する以下のライブラリを含んでいます。  
 
 * [TypeScript](https://www.typescriptlang.org/)
