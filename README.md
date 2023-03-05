@@ -64,3 +64,11 @@ module.exports = {
   testMatch: ["**/tests/**/*.test.ts"],
 };
 ```
+
+### ESLintとPrettierのインストール
+
+```shell
+yarn add -D eslint prettier
+yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
+yarn add -D eslint-config-prettier eslint-plugin-prettier
+```
