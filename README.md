@@ -63,6 +63,33 @@ yarn add -D eslint-config-prettier eslint-plugin-prettier
 npx eslint --init
 ```
 
+これだとうまくいかないケースがあるので、そのような場合は以下の内容に書き換えます。  
+
+```.eslintrc.js
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: 'module'
+  },
+  plugins: ['@typescript-eslint', 'prettier'],
+  rules: {
+    // additional rules
+  }
+};
+```
+
+---
+
 次に、Prettierの設定ファイルを作成します。  
 `.prettierrc`というファイルを作成し、以下の内容を記述します。  
 
@@ -73,5 +100,4 @@ npx eslint --init
   "semi": true,
   "singleQuote": true
 }
-
 ```
