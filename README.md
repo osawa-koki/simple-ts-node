@@ -16,6 +16,8 @@ TypeScriptを使ってNode.jsのプロジェクトを作るためのテンプレ
 yarn init -y
 ```
 
+生成された`package.json`の内容を適当に修正します。  
+
 ### TypeScriptのインストール
 
 ```shell
