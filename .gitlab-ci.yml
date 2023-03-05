@@ -6,6 +6,11 @@ stages:
 variables:
   GIT_DEPTH: 1
 
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
 test-lint-prettify:
   stage: test-lint-prettify
   script:
